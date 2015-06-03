@@ -23,5 +23,15 @@ start_link() ->
 %% ===================================================================
 
 init([]) ->
-    {ok, { {one_for_one, 5, 10}, []} }.
+    ChildSpec = [ws_server()],
+    {ok, { {one_for_one, 5, 10}, ChildSpec }}.
+
+ws_server() ->
+    ID = wsserver,
+    StartFunc = {ID, start_link, []},
+    Restart = permanent,
+    Shutdown = brutal_kill,
+    Type = worker,
+    Modules = [ID],
+    _ChildSpec = {ID, StartFunc, Restart, Shutdown, Type, Modules}.
 
