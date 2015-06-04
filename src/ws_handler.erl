@@ -1,19 +1,26 @@
 -module(ws_handler).
--export([init/3]).
+
+-export([init/2]).
 -export([websocket_init/3]).
 -export([websocket_handle/3]).
 -export([websocket_info/3]).
 -export([websocket_terminate/3]).
+
 -record(state, { }).
 
-init(_, _, _) ->
-{upgrade, protocol, cowboy_websocket}.
+%init(_, _, _) ->
+%{upgrade, protocol, cowboy_websocket}.
+%
+init(Req, Opts) ->
+	erlang:start_timer(1000, self(), <<"Hello!">>),
+	{cowboy_websocket, Req, Opts}.
 
 websocket_init(_, Req, _Opts) ->
-Req2 = cowboy_req:compact(Req), {ok, Req2, #state{}}.
+	Req2 = cowboy_req:compact(Req), {ok, Req2, #state{}}.
 
 % get_listメッセージの場合はメッセージのリストを返します
 websocket_handle({text, <<"get_list">>}, Req, State) ->
+
 % 最新のメッセージを取得する
 % RawMessages = get_recent_messages(10),
 % メッセージをJiffyが変換できる形式に変更
