@@ -23,7 +23,8 @@ start_link() ->
 %% ===================================================================
 
 init([]) ->
-    ChildSpec = [ws_server()],
+    %% ChildSpec = [ws_server()],
+    ChildSpec = [],
     {ok, { {one_for_one, 5, 10}, ChildSpec }}.
 
 ws_server() ->
