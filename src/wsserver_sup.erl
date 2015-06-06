@@ -23,16 +23,7 @@ start_link() ->
 %% ===================================================================
 
 init([]) ->
-    %% ChildSpec = [ws_server()],
-    ChildSpec = [],
-    {ok, { {one_for_one, 5, 10}, ChildSpec }}.
-
-ws_server() ->
-    ID = wsserver,
-    StartFunc = {ID, start_link, []},
-    Restart = permanent,
-    Shutdown = brutal_kill,
-    Type = worker,
-    Modules = [ID],
-    _ChildSpec = {ID, StartFunc, Restart, Shutdown, Type, Modules}.
-
+	%%
+	%% このアプリケーション自身のスーパバイザツリーは空（[]）です
+	%%
+	{ok, { {one_for_one, 5, 10}, [] }}.

@@ -5,22 +5,22 @@ REBAR:=rebar
 all: erl
 
 erl:
-	$(REBAR) get-deps compile
+	./$(REBAR) get-deps compile
 
 test: all
 	@mkdir -p .eunit
-	$(REBAR) skip_deps=true eunit
+	./$(REBAR) skip_deps=true eunit
 
 clean:
-	$(REBAR) clean
+	./$(REBAR) clean
 	-rm -rvf deps ebin doc .eunit
 
 doc:
-	$(REBAR) doc
+	./$(REBAR) doc
 
 release:
-	$(REBAR) get-deps compile
-	cd rel; $(REBAR) generate
+	./$(REBAR) get-deps compile
+	cd rel; ../$(REBAR) generate
 
 run:
 	./rel/wsserver/bin/wsserver start
