@@ -3,7 +3,7 @@
 
 -export([add/2, sub/2]).
 
--export([start_link/0]).
+-export([start_link/1]).
 -export([terminate/2]).
 -export([init/1]).
 -export([handle_call/3]).
@@ -20,7 +20,7 @@ sub(A,B) ->
 	V.
 
 
-start_link() ->
+start_link(_Opts) ->
 	Args = [],
 	gen_server:start_link({local, ?MODULE}, ?MODULE, Args, []).
 
