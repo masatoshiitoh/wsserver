@@ -8,6 +8,9 @@
 -export([init/1]).
 -export([handle_call/3]).
 
+%%
+%% 外部向けAPI
+%%
 
 add(A,B) ->
 	Reply = gen_server:call(?MODULE, {add, A, B}),
@@ -19,6 +22,9 @@ sub(A,B) ->
 	{ok, V} = Reply,
 	V.
 
+%%
+%% ビヘイビアのコールバック定義（処理の実体）
+%%
 
 start_link(_Opts) ->
 	Args = [],
