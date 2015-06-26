@@ -787,3 +787,394 @@ Eshell V6.4  (abort with ^G)
 (wsserver@127.0.0.1)1>                        (wsserver@127.0.0.1)1> 
 BREAK: (a)bort (c)ontinue (p)roc info (i)nfo (l)oaded
        (v)ersion (k)ill (D)b-tables (d)istribution
+
+=====
+===== LOGGING STARTED Fri Jun 26 19:29:08 JST 2015
+=====
+Exec: /home/b-itoh/wsserver/rel/wsserver/erts-6.4/bin/erlexec  -boot /home/b-itoh/wsserver/rel/wsserver/releases/1/wsserver -mode embedded -config /home/b-itoh/wsserver/rel/wsserver/releases/1/sys.config -args_file /home/b-itoh/wsserver/rel/wsserver/releases/1/vm.args -- console ''
+Root: /home/b-itoh/wsserver/rel/wsserver
+Erlang/OTP 17 [erts-6.4] [source] [64-bit] [async-threads:10] [hipe] [kernel-poll:false]
+
+Eshell V6.4  (abort with ^G)
+(wsserver@127.0.0.1)1> 
+=INFO REPORT==== 26-Jun-2015::19:29:12 ===
+    application: wsserver
+    exited: {{shutdown,
+                 {failed_to_start_child,gssample,
+                     {'EXIT',
+                         {undef,
+                             [{gssample,start_link,[],[]},
+                              {supervisor,do_start_child,2,
+                                  [{file,"supervisor.erl"},{line,314}]},
+                              {supervisor,start_children,3,
+                                  [{file,"supervisor.erl"},{line,297}]},
+                              {supervisor,init_children,2,
+                                  [{file,"supervisor.erl"},{line,263}]},
+                              {gen_server,init_it,6,
+                                  [{file,"gen_server.erl"},{line,306}]},
+                              {proc_lib,init_p_do_apply,3,
+                                  [{file,"proc_lib.erl"},{line,237}]}]}}}},
+             {wsserver_app,start,[normal,[]]}}
+    type: permanent
+(wsserver@127.0.0.1)1> i(){"Kernel pid terminated",application_controller,"{application_start_failure,wsserver,{{shutdown,{failed_to_start_child,gssample,{'EXIT',{undef,[{gssample,start_link,[],[]},{supervisor,do_start_child,2,[{file,\"supervisor.erl\"},{line,314}]},{supervisor,start_children,3,[{file,\"supervisor.erl\"},{line,297}]},{supervisor,init_children,2,[{file,\"supervisor.erl\"},{line,263}]},{gen_server,init_it,6,[{file,\"gen_server.erl\"},{line,306}]},{proc_lib,init_p_do_apply,3,[{file,\"proc_lib.erl\"},{line,237}]}]}}}},{wsserver_app,start,[normal,[]]}}}"}
+.
+
+Crash dump was written to: erl_crash.dump
+Kernel pid terminated (application_controller) ({application_start_failure,wsserver,{{shutdown,{failed_to_start_child,gssample,{'EXIT',{undef,[{gssample,start_link,[],[]},{supervisor,do_start_child,
+
+=====
+===== LOGGING STARTED Fri Jun 26 19:31:14 JST 2015
+=====
+Exec: /home/b-itoh/wsserver/rel/wsserver/erts-6.4/bin/erlexec  -boot /home/b-itoh/wsserver/rel/wsserver/releases/1/wsserver -mode embedded -config /home/b-itoh/wsserver/rel/wsserver/releases/1/sys.config -args_file /home/b-itoh/wsserver/rel/wsserver/releases/1/vm.args -- console ''
+Root: /home/b-itoh/wsserver/rel/wsserver
+Erlang/OTP 17 [erts-6.4] [source] [64-bit] [async-threads:10] [hipe] [kernel-poll:false]
+
+Eshell V6.4  (abort with ^G)
+(wsserver@127.0.0.1)1>                        (wsserver@127.0.0.1)1> i()[C[C.
+Pid                   Initial Call                          Heap     Reds Msgs
+Registered            Current Function                     Stack              
+<0.0.0>               otp_ring0:start/2                     1598    24916    0
+init                  init:loop/1                              2              
+<0.3.0>               erlang:apply/2                        4185    42208    0
+erl_prim_loader       erl_prim_loader:loop/3                   6              
+<0.709.0>             gen_event:init_it/6                   6772    22590    0
+error_logger          gen_event:fetch_msg/5                    8              
+<0.710.0>             erlang:apply/2                        1598     4672    0
+application_controlle gen_server:loop/6                        7              
+<0.712.0>             application_master:init/4              376       44    0
+                      application_master:main_loop/2           6              
+<0.713.0>             application_master:start_it/4          233       54    0
+                      application_master:loop_it/4             5              
+<0.714.0>             supervisor:kernel/1                   6772   856958    0
+kernel_sup            gen_server:loop/6                        9              
+<0.715.0>             rpc:init/1                             233       28    0
+rex                   gen_server:loop/6                        9              
+<0.716.0>             global:init/1                          233       52    0
+global_name_server    gen_server:loop/6                        9              
+<0.717.0>             erlang:apply/2                         233       19    0
+                      global:loop_the_locker/1                 5              
+<0.718.0>             erlang:apply/2                         233        3    0
+                      global:loop_the_registrar/0              2              
+<0.719.0>             inet_db:init/1                         376      325    0
+inet_db               gen_server:loop/6                        9              
+<0.721.0>             supervisor:erl_distribution/1          610      264    0
+net_sup               gen_server:loop/6                        9              
+<0.722.0>             erl_epmd:init/1                        233      264    0
+erl_epmd              gen_server:loop/6                        9              
+<0.723.0>             auth:init/1                            233       52    0
+auth                  gen_server:loop/6                        9              
+<0.724.0>             net_kernel:init/1                      376      791    0
+net_kernel            gen_server:loop/6                        9              
+<0.725.0>             inet_tcp_dist:accept_loop/2            233      373    0
+                      prim_inet:accept0/2                      9              
+<0.726.0>             net_kernel:ticker/2                    233        3    0
+                      net_kernel:ticker_loop/2                 3              
+<0.727.0>             global_group:init/1                    233       59    0
+global_group          gen_server:loop/6                        9              
+<0.728.0>             file_server:init/1                     610      273    0
+file_server_2         gen_server:loop/6                        9              
+<0.729.0>             erlang:apply/2                      121536    42712    0
+code_server           code_server:loop/1                       3              
+<0.730.0>             supervisor_bridge:standard_error/      233       41    0
+standard_error_sup    gen_server:loop/6                        9              
+<0.731.0>             erlang:apply/2                         233        9    0
+standard_error        standard_error:server_loop/1             2              
+<0.732.0>             supervisor_bridge:user_sup/1           987      103    0
+                      gen_server:loop/6                        9              
+<0.733.0>             user_drv:server/2                      987     2009    0
+user_drv              user_drv:server_loop/5                   8              
+<0.734.0>             group:server/3                         233       20    0
+user                  group:server_loop/3                      4              
+<0.735.0>             group:server/3                        2586    14288    0
+                      group:server_loop/3                      4              
+<0.736.0>             erlang:apply/2                       10958     2679    0
+                      shell:shell_rep/4                       17              
+<0.737.0>             kernel_config:init/1                   233      284    0
+                      gen_server:loop/6                        9              
+<0.738.0>             supervisor:kernel/1                    233       58    0
+kernel_safe_sup       gen_server:loop/6                        9              
+<0.744.0>             application_master:init/4              233       23    0
+                      application_master:main_loop/2           6              
+<0.745.0>             application_master:start_it/4          233       84    0
+                      application_master:loop_it/4             5              
+<0.746.0>             erlang:apply/2                         233      161    0
+                      file_io_server:server_loop/1             3              
+<0.747.0>             supervisor:sasl/1                      233      151    0
+sasl_sup              gen_server:loop/6                        9              
+<0.748.0>             supervisor:sasl/1                      233      156    0
+sasl_safe_sup         gen_server:loop/6                        9              
+<0.749.0>             gen_event:init_it/6                    233       29    0
+alarm_handler         gen_event:fetch_msg/5                    8              
+<0.750.0>             overload:init/1                        233       39    0
+overload              gen_server:loop/6                        9              
+<0.751.0>             release_handler:init/1                6772     6012    0
+release_handler       gen_server:loop/6                        9              
+<0.754.0>             application_master:init/4              233       23    0
+                      application_master:main_loop/2           6              
+<0.755.0>             application_master:start_it/4          233      288    0
+                      application_master:loop_it/4             5              
+<0.756.0>             supervisor:ranch_sup/1                 376      178    0
+ranch_sup             gen_server:loop/6                        9              
+<0.757.0>             ranch_server:init/1                    233       57    0
+ranch_server          gen_server:loop/6                        9              
+<0.761.0>             application_master:init/4              233       23    0
+                      application_master:main_loop/2           6              
+<0.762.0>             application_master:start_it/4          233       33    0
+                      application_master:loop_it/4             5              
+<0.763.0>             supervisor:cowboy_sup/1                233       95    0
+cowboy_sup            gen_server:loop/6                        9              
+<0.764.0>             cowboy_clock:init/1                    233       80    0
+cowboy_clock          gen_server:loop/6                        9              
+<0.766.0>             application_master:init/4              233       23    0
+                      application_master:main_loop/2           6              
+<0.767.0>             application_master:start_it/4          233       99    0
+                      application_master:loop_it/4             5              
+<0.768.0>             supervisor:ranch_listener_sup/1        233      142    0
+                      gen_server:loop/6                        9              
+<0.769.0>             ranch_conns_sup:init/7                 233       25    0
+                      ranch_conns_sup:loop/4                  15              
+(c)ontinue (q)uit -->  c
+<0.770.0>             supervisor:ranch_acceptors_sup/1      6772     4003    0
+                      gen_server:loop/6                        9              
+<0.771.0>             ranch_acceptor:loop/3                  233       33    0
+                      prim_inet:accept0/2                     10              
+<0.772.0>             ranch_acceptor:loop/3                  233       33    0
+                      prim_inet:accept0/2                     10              
+<0.773.0>             ranch_acceptor:loop/3                  233       33    0
+                      prim_inet:accept0/2                     10              
+<0.774.0>             ranch_acceptor:loop/3                  233       33    0
+                      prim_inet:accept0/2                     10              
+<0.775.0>             ranch_acceptor:loop/3                  233       33    0
+                      prim_inet:accept0/2                     10              
+<0.776.0>             ranch_acceptor:loop/3                  233       33    0
+                      prim_inet:accept0/2                     10              
+<0.777.0>             ranch_acceptor:loop/3                  233       33    0
+                      prim_inet:accept0/2                     10              
+<0.778.0>             ranch_acceptor:loop/3                  233       33    0
+                      prim_inet:accept0/2                     10              
+<0.779.0>             ranch_acceptor:loop/3                  233       33    0
+                      prim_inet:accept0/2                     10              
+<0.780.0>             ranch_acceptor:loop/3                  233       33    0
+                      prim_inet:accept0/2                     10              
+<0.781.0>             ranch_acceptor:loop/3                  233       33    0
+                      prim_inet:accept0/2                     10              
+<0.782.0>             ranch_acceptor:loop/3                  233       33    0
+                      prim_inet:accept0/2                     10              
+<0.783.0>             ranch_acceptor:loop/3                  233       33    0
+                      prim_inet:accept0/2                     10              
+<0.784.0>             ranch_acceptor:loop/3                  233       33    0
+                      prim_inet:accept0/2                     10              
+<0.785.0>             ranch_acceptor:loop/3                  233       33    0
+                      prim_inet:accept0/2                     10              
+<0.786.0>             ranch_acceptor:loop/3                  233       33    0
+                      prim_inet:accept0/2                     10              
+<0.787.0>             ranch_acceptor:loop/3                  233       33    0
+                      prim_inet:accept0/2                     10              
+<0.788.0>             ranch_acceptor:loop/3                  233       33    0
+                      prim_inet:accept0/2                     10              
+<0.789.0>             ranch_acceptor:loop/3                  233       33    0
+                      prim_inet:accept0/2                     10              
+<0.790.0>             ranch_acceptor:loop/3                  233       33    0
+                      prim_inet:accept0/2                     10              
+<0.791.0>             ranch_acceptor:loop/3                  233       33    0
+                      prim_inet:accept0/2                     10              
+<0.792.0>             ranch_acceptor:loop/3                  233       33    0
+                      prim_inet:accept0/2                     10              
+<0.793.0>             ranch_acceptor:loop/3                  233       33    0
+                      prim_inet:accept0/2                     10              
+<0.794.0>             ranch_acceptor:loop/3                  233       33    0
+                      prim_inet:accept0/2                     10              
+<0.795.0>             ranch_acceptor:loop/3                  233       33    0
+                      prim_inet:accept0/2                     10              
+<0.796.0>             ranch_acceptor:loop/3                  233       33    0
+                      prim_inet:accept0/2                     10              
+<0.797.0>             ranch_acceptor:loop/3                  233       33    0
+                      prim_inet:accept0/2                     10              
+<0.798.0>             ranch_acceptor:loop/3                  233       33    0
+                      prim_inet:accept0/2                     10              
+<0.799.0>             ranch_acceptor:loop/3                  233       33    0
+                      prim_inet:accept0/2                     10              
+<0.800.0>             ranch_acceptor:loop/3                  233       33    0
+                      prim_inet:accept0/2                     10              
+<0.801.0>             ranch_acceptor:loop/3                  233       33    0
+                      prim_inet:accept0/2                     10              
+<0.802.0>             ranch_acceptor:loop/3                  233       33    0
+                      prim_inet:accept0/2                     10              
+<0.803.0>             ranch_acceptor:loop/3                  233       33    0
+                      prim_inet:accept0/2                     10              
+<0.804.0>             ranch_acceptor:loop/3                  233       33    0
+                      prim_inet:accept0/2                     10              
+<0.805.0>             ranch_acceptor:loop/3                  233       33    0
+                      prim_inet:accept0/2                     10              
+<0.806.0>             ranch_acceptor:loop/3                  233       33    0
+                      prim_inet:accept0/2                     10              
+<0.807.0>             ranch_acceptor:loop/3                  233       33    0
+                      prim_inet:accept0/2                     10              
+<0.808.0>             ranch_acceptor:loop/3                  233       33    0
+                      prim_inet:accept0/2                     10              
+<0.809.0>             ranch_acceptor:loop/3                  233       33    0
+                      prim_inet:accept0/2                     10              
+<0.810.0>             ranch_acceptor:loop/3                  233       33    0
+                      prim_inet:accept0/2                     10              
+<0.811.0>             ranch_acceptor:loop/3                  233       33    0
+                      prim_inet:accept0/2                     10              
+<0.812.0>             ranch_acceptor:loop/3                  233       33    0
+                      prim_inet:accept0/2                     10              
+<0.813.0>             ranch_acceptor:loop/3                  233       33    0
+                      prim_inet:accept0/2                     10              
+<0.814.0>             ranch_acceptor:loop/3                  233       33    0
+                      prim_inet:accept0/2                     10              
+<0.815.0>             ranch_acceptor:loop/3                  233       33    0
+                      prim_inet:accept0/2                     10              
+<0.816.0>             ranch_acceptor:loop/3                  233       33    0
+                      prim_inet:accept0/2                     10              
+<0.817.0>             ranch_acceptor:loop/3                  233       33    0
+                      prim_inet:accept0/2                     10              
+<0.818.0>             ranch_acceptor:loop/3                  233       33    0
+                      prim_inet:accept0/2                     10              
+<0.819.0>             ranch_acceptor:loop/3                  233       33    0
+                      prim_inet:accept0/2                     10              
+(c)ontinue (q)uit -->c
+<0.820.0>             ranch_acceptor:loop/3                  233       33    0
+                      prim_inet:accept0/2                     10              
+<0.821.0>             ranch_acceptor:loop/3                  233       33    0
+                      prim_inet:accept0/2                     10              
+<0.822.0>             ranch_acceptor:loop/3                  233       33    0
+                      prim_inet:accept0/2                     10              
+<0.823.0>             ranch_acceptor:loop/3                  233       33    0
+                      prim_inet:accept0/2                     10              
+<0.824.0>             ranch_acceptor:loop/3                  233       33    0
+                      prim_inet:accept0/2                     10              
+<0.825.0>             ranch_acceptor:loop/3                  233       33    0
+                      prim_inet:accept0/2                     10              
+<0.826.0>             ranch_acceptor:loop/3                  233       33    0
+                      prim_inet:accept0/2                     10              
+<0.827.0>             ranch_acceptor:loop/3                  233       33    0
+                      prim_inet:accept0/2                     10              
+<0.828.0>             ranch_acceptor:loop/3                  233       33    0
+                      prim_inet:accept0/2                     10              
+<0.829.0>             ranch_acceptor:loop/3                  233       33    0
+                      prim_inet:accept0/2                     10              
+<0.830.0>             ranch_acceptor:loop/3                  233       33    0
+                      prim_inet:accept0/2                     10              
+<0.831.0>             ranch_acceptor:loop/3                  233       33    0
+                      prim_inet:accept0/2                     10              
+<0.832.0>             ranch_acceptor:loop/3                  233       33    0
+                      prim_inet:accept0/2                     10              
+<0.833.0>             ranch_acceptor:loop/3                  233       33    0
+                      prim_inet:accept0/2                     10              
+<0.834.0>             ranch_acceptor:loop/3                  233       33    0
+                      prim_inet:accept0/2                     10              
+<0.835.0>             ranch_acceptor:loop/3                  233       33    0
+                      prim_inet:accept0/2                     10              
+<0.836.0>             ranch_acceptor:loop/3                  233       33    0
+                      prim_inet:accept0/2                     10              
+<0.837.0>             ranch_acceptor:loop/3                  233       33    0
+                      prim_inet:accept0/2                     10              
+<0.838.0>             ranch_acceptor:loop/3                  233       33    0
+                      prim_inet:accept0/2                     10              
+<0.839.0>             ranch_acceptor:loop/3                  233       33    0
+                      prim_inet:accept0/2                     10              
+<0.840.0>             ranch_acceptor:loop/3                  233       33    0
+                      prim_inet:accept0/2                     10              
+<0.841.0>             ranch_acceptor:loop/3                  233       33    0
+                      prim_inet:accept0/2                     10              
+<0.842.0>             ranch_acceptor:loop/3                  233       33    0
+                      prim_inet:accept0/2                     10              
+<0.843.0>             ranch_acceptor:loop/3                  233       33    0
+                      prim_inet:accept0/2                     10              
+<0.844.0>             ranch_acceptor:loop/3                  233       33    0
+                      prim_inet:accept0/2                     10              
+<0.845.0>             ranch_acceptor:loop/3                  233       33    0
+                      prim_inet:accept0/2                     10              
+<0.846.0>             ranch_acceptor:loop/3                  233       33    0
+                      prim_inet:accept0/2                     10              
+<0.847.0>             ranch_acceptor:loop/3                  233       33    0
+                      prim_inet:accept0/2                     10              
+<0.848.0>             ranch_acceptor:loop/3                  233       33    0
+                      prim_inet:accept0/2                     10              
+<0.849.0>             ranch_acceptor:loop/3                  233       33    0
+                      prim_inet:accept0/2                     10              
+<0.850.0>             ranch_acceptor:loop/3                  233       33    0
+                      prim_inet:accept0/2                     10              
+<0.851.0>             ranch_acceptor:loop/3                  233       33    0
+                      prim_inet:accept0/2                     10              
+<0.852.0>             ranch_acceptor:loop/3                  233       33    0
+                      prim_inet:accept0/2                     10              
+<0.853.0>             ranch_acceptor:loop/3                  233       33    0
+                      prim_inet:accept0/2                     10              
+<0.854.0>             ranch_acceptor:loop/3                  233       33    0
+                      prim_inet:accept0/2                     10              
+<0.855.0>             ranch_acceptor:loop/3                  233       33    0
+                      prim_inet:accept0/2                     10              
+<0.856.0>             ranch_acceptor:loop/3                  233       33    0
+                      prim_inet:accept0/2                     10              
+<0.857.0>             ranch_acceptor:loop/3                  233       33    0
+                      prim_inet:accept0/2                     10              
+<0.858.0>             ranch_acceptor:loop/3                  233       33    0
+                      prim_inet:accept0/2                     10              
+<0.859.0>             ranch_acceptor:loop/3                  233       33    0
+                      prim_inet:accept0/2                     10              
+<0.860.0>             ranch_acceptor:loop/3                  233       33    0
+                      prim_inet:accept0/2                     10              
+<0.861.0>             ranch_acceptor:loop/3                  233       33    0
+                      prim_inet:accept0/2                     10              
+<0.862.0>             ranch_acceptor:loop/3                  233       33    0
+                      prim_inet:accept0/2                     10              
+<0.863.0>             ranch_acceptor:loop/3                  233       33    0
+                      prim_inet:accept0/2                     10              
+<0.864.0>             ranch_acceptor:loop/3                  233       33    0
+                      prim_inet:accept0/2                     10              
+<0.865.0>             ranch_acceptor:loop/3                  233       33    0
+                      prim_inet:accept0/2                     10              
+<0.866.0>             ranch_acceptor:loop/3                  233       33    0
+                      prim_inet:accept0/2                     10              
+<0.867.0>             ranch_acceptor:loop/3                  233       33    0
+                      prim_inet:accept0/2                     10              
+<0.868.0>             ranch_acceptor:loop/3                  233       33    0
+                      prim_inet:accept0/2                     10              
+<0.869.0>             ranch_acceptor:loop/3                  233       33    0
+                      prim_inet:accept0/2                     10              
+(c)ontinue (q)uit -->c
+<0.870.0>             ranch_acceptor:loop/3                  233       33    0
+                      prim_inet:accept0/2                     10              
+<0.871.0>             supervisor:wsserver_sup/1              233       95    0
+wsserver_sup          gen_server:loop/6                        9              
+<0.872.0>             gssample:init/1                        233       26    0
+gssample              gen_server:loop/6                        9              
+<0.875.0>             erlang:apply/2                        1598    55666    0
+                      rpc:local_call/3                        52              
+Total                                                     207300  1086962    0
+                                                            1447              
+ok
+(wsserver@127.0.0.1)2> gssample:add(1,2 4)[C[C[C[C[C.
+5
+(wsserver@127.0.0.1)3>                        (wsserver@127.0.0.1)3> gssample:add(1,4).). ").a).").[C[C
+
+=ERROR REPORT==== 26-Jun-2015::19:31:37 ===
+** Generic server gssample terminating 
+** Last message in was {add,1,"a"}
+** When Server state == []
+** Reason for termination == 
+** {badarith,[{gssample,handle_call,3,[{file,"src/gssample.erl"},{line,41}]},
+              {gen_server,try_handle_call,4,
+                          [{file,"gen_server.erl"},{line,607}]},
+              {gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,639}]},
+              {proc_lib,init_p_do_apply,3,
+                        [{file,"proc_lib.erl"},{line,237}]}]}
+** exception exit: {{badarith,[{gssample,handle_call,3,
+                                         [{file,"src/gssample.erl"},{line,41}]},
+                               {gen_server,try_handle_call,4,
+                                           [{file,"gen_server.erl"},{line,607}]},
+                               {gen_server,handle_msg,5,
+                                           [{file,"gen_server.erl"},{line,639}]},
+                               {proc_lib,init_p_do_apply,3,
+                                         [{file,"proc_lib.erl"},{line,237}]}]},
+                    {gen_server,call,[gssample,{add,1,"a"}]}}
+     in function  gen_server:call/2 (gen_server.erl, line 182)
+     in call from gssample:add/2 (src/gssample.erl, line 16)
+(wsserver@127.0.0.1)4>                        (wsserver@127.0.0.1)4> gssample:add(1,"a").                                           (wsserver@127.0.0.1)4> gssample:add(1,4).
+5
+(wsserver@127.0.0.1)5> 
+BREAK: (a)bort (c)ontinue (p)roc info (i)nfo (l)oaded
+       (v)ersion (k)ill (D)b-tables (d)istribution

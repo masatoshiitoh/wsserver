@@ -24,6 +24,13 @@ start_link() ->
 
 init([]) ->
 	%%
+	%% gssample 
+	%%
+	GssampleSpec = {gssample, {gssample, start_link, [[]]}, permanent, brutal_kill, worker, [gssample]},
+	{ok, { {one_for_one, 5, 10}, [GssampleSpec] }}.
+
+%% init([]) ->
+	%%
 	%% このアプリケーション自身のスーパバイザツリーは空（[]）です
 	%%
-	{ok, { {one_for_one, 5, 10}, [] }}.
+%%	{ok, { {one_for_one, 5, 10}, [] }}.
